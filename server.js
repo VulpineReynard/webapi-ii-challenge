@@ -40,11 +40,25 @@ server.post('/api/posts', (req, res) => {
 server.post('/api/posts/:id/comments', (req, res) => {
   // get the id of the requested post
   let id = req.params.id;
-
-  dbFunc.insertComment(req.body);
-  let newComments = dbFunc.findPostComments(id);
   
-  res.status(201).json(newComments);
+  res.status(201).json('working on this request');
 });
+
+// GET A POST DEPENDING ON IT'S ID
+server.get('/api/posts/:id', (req, res) => {
+  let id = req.params.id;
+
+
+  res.status(200).json('working on this request too');
+});
+
+// GET COMMENTS ON A SPECIFIC POST
+server.get('/api/posts/:id/comments', (req, res) => {
+  let id = req.params.id;
+
+
+
+  res.status(200).json('working on this request')
+})
 
 module.exports = server;
